@@ -37,31 +37,6 @@ class RotateServer:
             print(f"num conections: {num_threads}")
         s.close()
 
-        # if not data:
-        #     continue
-        # conn.sendall(b'Welcome to rotate server\n you sent: ' + data)
-        # inp = str(data.decode())
-        # if inp == "1":
-        #     res = subprocess.run(
-        #         ['xrandr', '--output', 'DP-1', '--rotate', 'normal'],
-        #         capture_output=True)
-        # elif inp == "2":
-        #     res = subprocess.run(
-        #         ['xrandr', '--output', 'DP-1', '--rotate', 'left'],
-        #         capture_output=True)
-        # elif inp == "3":
-        #     res = subprocess.run(
-        #         ['xrandr', '--output', 'DP-1', '--rotate', 'right'],
-        #         capture_output=True)
-        # elif inp == "4":
-        #     res = subprocess.run(
-        #         ['xrandr', '--output', 'DP-1', '--rotate', 'inverted'],
-        #         capture_output=True)
-        # else:
-        #     continue
-        # print(res.stdout)
-        # print("Received", repr(data))
-
     def _multi_thread_client(self, conn: socket.socket, addr, tid):
         conn.send(str.encode('server is working'))
         while True:
